@@ -12,6 +12,7 @@ class ConfigLoader:
         self.config = load_config()
 
 class ModelLoader(BaseModel):
+    # pydantic validation
     model_provider: Literal["groq","openai"] = "groq"
     config:Optional[ConfigLoader] = Field(default=None, exclude=True)
     
